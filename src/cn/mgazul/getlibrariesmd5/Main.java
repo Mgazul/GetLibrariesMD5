@@ -19,14 +19,10 @@ public class Main {
                     if (file2.isDirectory()) {
                         folderMethod(file2.getPath());
                     } else {
-                        if (file2.getName().endsWith(".jar")) {
-                            try {
-                                System.out.println(file2.getPath().replace("\\", "/") + "|" + MD5Util.getMD5(file2));
-                            } catch (NoSuchAlgorithmException | IOException e) {
-                                e.printStackTrace();
-                            }
-                        } else {
-                            file2.delete();
+                        try {
+                            System.out.println(file2.getPath().replace("\\", "/") + "|" + MD5Util.getMD5(file2) + "|" + file2.length());
+                        } catch (NoSuchAlgorithmException | IOException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
