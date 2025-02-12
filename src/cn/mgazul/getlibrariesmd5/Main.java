@@ -21,6 +21,7 @@ public class Main {
                     } else {
                         try {
                             System.out.println(file2.getPath().replace("\\", "/") + "|" + MD5Util.getMD5(file2) + "|" + file2.length());
+                            System.out.println(file2.getPath().replace("\\", "/") + "|" + SHA256.getSHA256(file2) + "|" + file2.length());
                         } catch (NoSuchAlgorithmException | IOException e) {
                             e.printStackTrace();
                         }
